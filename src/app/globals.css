@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: rooSub;
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap')
+}
+
+body, html {
+  background-color: white;
+  height: 100%;
+  font-family: rooSub;
+}
+
+.button {
+  color: white;
+  padding: 8px 16px;
+}
+
+.border {
+  border-style: solid !important;
+  border-color: black;
+  rotate: 45deg;
+  padding: 4px;
+}
