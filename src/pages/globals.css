@@ -8,7 +8,7 @@
   src: url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap')
 }
 
-body, html {
+body, html, #__next {
   background-color: white;
   height: 100%;
   font-family: rooSub;
@@ -20,8 +20,27 @@ body, html {
 }
 
 .border {
-  border-style: solid !important;
+  border-style: solid;
   border-color: black;
   rotate: 45deg;
   padding: 4px;
+}
+
+.dashBorder-left {
+  border-right: 2px dashed #D3D3D3;
+  border-top: 2px dashed #D3D3D3;
+  rotate: 45deg;
+  position: fixed;
+  height: 600px;
+  width: 600px;
+  left: -430px;
+}
+
+.dashBorder-right {
+  border-left: 2px dashed #D3D3D3;
+  border-bottom: 2px dashed #D3D3D3;
+  rotate: 45deg;
+  position: fixed;
+  height: 600px;
+  width: 600px;
 }

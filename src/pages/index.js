@@ -1,4 +1,6 @@
 import { MdPlayArrow } from "react-icons/md";
+import "./globals.css";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -13,19 +15,25 @@ export default function Home() {
       </div>
       <div className="flex flex-row justify-between w-full items-center">
         <div className="flex items-center">
-          <div className="border"> 
-            <MdPlayArrow className="rotate-[135deg]" size={30}/>
-          </div>
-          <div className="text-sm pl-6">  DISCOVER A.I. </div>
+        <div className="dashBorder-left"> </div>
+          <Link href="/"> 
+            <div className="border"> 
+              <MdPlayArrow className="rotate-[135deg]" size={30}/>
+            </div>
+          </Link>
+            <div className="text-sm pl-6">  DISCOVER A.I. </div>
         </div>
         <div className="h-60 w-[680px] text-9xl font-light text-center">
           Sophisticated skincare
         </div>
         <div className="flex items-center">
+          <div className="dashBorder-right"> </div>
           <div className="text-sm pr-6"> TAKE TEST </div>
-          <div className="border"> 
-            <MdPlayArrow className="-rotate-45" size={30}/>
-          </div>
+          <Link href="/introduce"> 
+            <div className="border"> 
+              <MdPlayArrow className="-rotate-45" size={30}/>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="justify-start w-full">
