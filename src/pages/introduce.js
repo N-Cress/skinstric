@@ -1,44 +1,35 @@
 import { MdPlayArrow } from "react-icons/md";
 import "./globals.css";
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+    const [name, setName] = useState("")
+
   return (
     <main className="flex flex-col items-center justify-between h-full w-full pl-8 pr-8">
-      <div className="flex justify-between items-center w-full h-16">
-        <div className=""> 
-          SKINSTRIC <span> INTRO </span>
+      <div className="flex justify-start w-full flex-col font-semibold">
+        <div className="flex justify-between items-center w-full h-16">
+            <div className=""> 
+            SKINSTRIC <span className="grey"> &#91; INTRO &#93; </span>
+            </div>
         </div>
-        <div className="bg-black button text-[10px] font-medium">
-          ENTER CODE
+        <div>
+            TO START ANALYSIS
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full items-center">
-        <div className="flex items-center">
+        <div className="dashBorder flex items-center pl-4 flex-col text-center justify-center">
+            <div className="grey textlabel text-sm unrotate pb-4 pr-16"> CLICK TO TYPE </div>
+            <input className="textfield decoration-[1px] text-center underline underline-offset-8 text-6xl font-light unrotate" type="text" id="name" placeholder="Introduce Yourself" /> 
+        </div>
+      <div className="flex pb-4 w-full items-center">
           <Link href="/"> 
           <div className="border"> 
-            <MdPlayArrow className="rotate-[135deg]" size={30}/>
+            <MdPlayArrow className="rotate-[135deg]" size={20}/>
           </div>
           </Link>
-            <div className="text-sm pl-6">  DISCOVER A.I. </div>
+            <div className="text-lg pl-4">  Back </div>
         </div>
-        <div className="h-60 w-[680px] text-9xl font-light text-center">
-          INTRODUCTION
-        </div>
-        <div className="flex items-center">
-          <div className="text-sm pr-6"> TAKE TEST </div>
-          <Link href="/introduce"> 
-            <div className="border"> 
-              <MdPlayArrow className="-rotate-45" size={30}/>
-            </div>
-          </Link>
-        </div>
-      </div>
-      <div className="justify-start w-full">
-        <div className="pb-6 w-[316px] text-sm font-normal">
-          SKINSTRIC DEVELOPED AN A.I. THAT CREATES A HIGHLY PERSONALISE ROUTINE TAILORED TO WHAT YOUR SKIN NEEDS.
-        </div>
-      </div>
     </main>
   );
 }

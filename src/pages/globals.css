@@ -14,6 +14,10 @@ body, html, #__next {
   font-family: rooSub;
 }
 
+.grey {
+  color: #a9a9a9;
+}
+
 .button {
   color: white;
   padding: 8px 16px;
@@ -24,6 +28,13 @@ body, html, #__next {
   border-color: black;
   rotate: 45deg;
   padding: 4px;
+}
+
+.dashBorder {
+  border: 2px dashed #D3D3D3;
+  height: 502px;
+  width: 502px;
+  rotate: 45deg;
 }
 
 .dashBorder-left {
@@ -43,4 +54,25 @@ body, html, #__next {
   position: fixed;
   height: 600px;
   width: 600px;
+}
+
+.unrotate {
+  rotate: -45deg;
+}
+
+.textfield {
+  overflow: hidden;
+  width: 100%;
+}
+
+.textfield:focus {
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input:focus {
+  text-decoration: none;
 }

@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex flex-col items-center justify-between h-full w-full pl-8 pr-8">
       <div className="flex justify-between items-center w-full h-16">
         <div className=""> 
-          SKINSTRIC <span> INTRO </span>
+          SKINSTRIC <span className="grey"> &#91; INTRO &#93; </span>
         </div>
         <div className="bg-black button text-[10px] font-medium">
           ENTER CODE
@@ -23,7 +23,7 @@ export default function Home() {
           </Link>
             <div className="text-sm pl-6">  DISCOVER A.I. </div>
         </div>
-        <div className="h-60 w-[680px] text-9xl font-light text-center">
+        <div className=" w-[680px] text-9xl font-light text-center">
           Sophisticated skincare
         </div>
         <div className="flex items-center">
