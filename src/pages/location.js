@@ -10,10 +10,10 @@ export default function Home() {
 
     function changeHandler(event) {
         setName(event.target.value)
+        console.log(name)
     }
 
-    function formSubmit(event) {
-        event.preventDefault();
+    function formSubmit() {
         localStorage.setItem("name", name);
         router.push('/location');
     }
@@ -32,9 +32,9 @@ export default function Home() {
         </div>
       </div>
         <form onSubmit={formSubmit}>
-            <div className="dashBorder flex items-center pl-4 flex-col text-center justify-center">
+            <div className="dashBorder flex items-center flex-col pl-4 text-center justify-center">
                 <div className="grey textlabel text-sm unrotate pb-4 pr-16"> CLICK TO TYPE </div>
-                <input onChange={changeHandler} value={name} required id="name" className="textfield decoration-[1px] text-center underline underline-offset-8 text-5xl font-light unrotate" type="text" placeholder="Introduce Yourself" />
+                <input onChange={changeHandler} value={name} required id="name" className="textfield decoration-[1px] text-center underline underline-offset-8 text-5xl font-light unrotate" type="text" placeholder="Where are you from?" />
             </div>
         </form>
       <div className="flex pb-4 w-full items-center">
