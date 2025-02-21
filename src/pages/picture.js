@@ -1,4 +1,6 @@
 import { MdPlayArrow } from "react-icons/md";
+import { PiApertureFill } from "react-icons/pi";
+import { TbPhotoCircle } from "react-icons/tb";
 import "./globals.css";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -13,10 +15,9 @@ export default function Home() {
         console.log(name)
     }
 
-    function formSubmit(event) {
-        event.preventDefault();
+    function formSubmit() {
         localStorage.setItem("name", name);
-        router.push('/picture');
+        router.push('/location');
     }
     
 
@@ -32,14 +33,16 @@ export default function Home() {
             TO START ANALYSIS
         </div>
       </div>
-        <form onSubmit={formSubmit}>
-            <div className="dashBorder flex items-center flex-col pl-4 text-center justify-center">
-                <div className="grey textlabel text-sm unrotate pb-4 pr-16"> CLICK TO TYPE </div>
-                <input onChange={changeHandler} value={name} required id="name" className="textfield decoration-[1px] text-center underline underline-offset-8 text-5xl font-light unrotate" type="text" placeholder="Where are you from?" />
+        <form className="flex w-full justify-center" onSubmit={formSubmit}>
+            <div className="dashBorder-sm flex items-center flex-col text-center justify-center">
+                <PiApertureFill className="border-circle unrotate" size={140}/>
+            </div>
+            <div className="dashBorder-sm flex items-center flex-col ml-96 text-center justify-center">
+                <TbPhotoCircle className="border-circle unrotate" size={140}/>
             </div>
         </form>
       <div className="flex pb-4 w-full items-center">
-          <Link href="/introduce"> 
+          <Link href="/location"> 
           <div className="border"> 
             <MdPlayArrow className="rotate-[135deg]" size={20}/>
           </div>

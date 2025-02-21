@@ -30,10 +30,24 @@ body, html, #__next {
   padding: 4px;
 }
 
+.border-circle {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 50%;
+}
+
 .dashBorder {
   border: 2px dashed #D3D3D3;
   height: 502px;
   width: 502px;
+  rotate: 45deg;
+}
+
+.dashBorder-sm {
+  border: 2px dashed #D3D3D3;
+  height: 302px;
+  width: 302px;
   rotate: 45deg;
 }
 
