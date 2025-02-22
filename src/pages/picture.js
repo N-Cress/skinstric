@@ -12,12 +12,15 @@ export default function Home() {
 
     function changeHandler(event) {
         setName(event.target.value)
-        console.log(name)
     }
 
-    function formSubmit() {
-        localStorage.setItem("name", name);
-        router.push('/location');
+    function encodeImageFileAsURL(event) {
+      var file = event.target.files[0];
+      var reader = new FileReader();
+      reader.onloadend = function() {
+        console.log('RESULT', reader.result)
+      }
+      reader.readAsDataURL(file);
     }
     
 
@@ -33,9 +36,11 @@ export default function Home() {
             TO START ANALYSIS
         </div>
       </div>
-        <form className="flex w-full justify-center" onSubmit={formSubmit}>
+        <form className="flex w-full justify-center" >
             <div className="dashBorder-sm flex items-center flex-col text-center justify-center">
-                <PiApertureFill className="border-circle unrotate" size={140}/>
+                  <input className="unrotate" type="file" onClick={encodeImageFileAsURL} /> 
+                    <PiApertureFill type="file" className="border-circle unrotate" size={140}/>
+    
             </div>
             <div className="dashBorder-sm flex items-center flex-col ml-96 text-center justify-center">
                 <TbPhotoCircle className="border-circle unrotate" size={140}/>

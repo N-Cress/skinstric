@@ -6,15 +6,29 @@ import { useRouter } from 'next/router';
 
 export default function Home() {
     const router = useRouter();
-    const [name, setName] = useState("");
+    const [location, setLocation] = useState("");
+    const axios = require('axios');
+
 
     function changeHandler(event) {
-        setName(event.target.value)
-        console.log(name)
+        setLocation(event.target.value)
     }
 
-    function formSubmit(event) {
+    async function formSubmit(event) {
         event.preventDefault();
+        console.log(localStorage.getItem("name"), location)
+        axios({
+          method: 'post',
+          url: 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne',
+          data: {
+              name: localStorage.getItem("name"), 
+              location: location
+          }
+        })
+        .then(function(response) {
+          console.log(response)
+        });
+
         localStorage.setItem("name", name);
         router.push('/picture');
     }
@@ -35,7 +49,7 @@ export default function Home() {
         <form onSubmit={formSubmit}>
             <div className="dashBorder flex items-center flex-col pl-4 text-center justify-center">
                 <div className="grey textlabel text-sm unrotate pb-4 pr-16"> CLICK TO TYPE </div>
-                <input onChange={changeHandler} value={name} required id="name" className="textfield decoration-[1px] text-center underline underline-offset-8 text-5xl font-light unrotate" type="text" placeholder="Where are you from?" />
+                <input onChange={changeHandler} value={location} required id="location" className="textfield decoration-[1px] text-center underline underline-offset-8 text-5xl font-light unrotate" type="text" placeholder="Where are you from?" />
             </div>
         </form>
       <div className="flex pb-4 w-full items-center">
