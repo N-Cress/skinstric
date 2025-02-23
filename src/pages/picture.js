@@ -8,20 +8,41 @@ import { useRouter } from 'next/router';
 
 export default function Home() {
     const router = useRouter();
-    const [name, setName] = useState("");
+    
 
     function changeHandler(event) {
         setName(event.target.value)
     }
 
-    function encodeImageFileAsURL(event) {
-      var file = event.target.files[0];
-      var reader = new FileReader();
-      reader.onloadend = function() {
-        console.log('RESULT', reader.result)
+    const getBase64 = (file) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result.split(",")[1]);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    };
+    
+    async function encodeImageFileAsURL(event) {
+      event.preventDefault();
+      
+    
+      const file = event.target.files[0];
+      if (!file) return;
+    
+      try {
+        const base64String = await getBase64(file);
+    
+        router.push({
+          pathname: "/results",
+          query: { base64: encodeURIComponent(base64String) },
+        });
+      } catch (error) {
+        console.error("Error reading file:", error);
       }
-      reader.readAsDataURL(file);
     }
+
+
     
 
   return (
@@ -38,12 +59,26 @@ export default function Home() {
       </div>
         <form className="flex w-full justify-center" >
             <div className="dashBorder-sm flex items-center flex-col text-center justify-center">
-                  <input className="unrotate" type="file" onClick={encodeImageFileAsURL} /> 
-                    <PiApertureFill type="file" className="border-circle unrotate" size={140}/>
-    
+            <label htmlFor="file-upload" className="cursor-pointer">
+              <PiApertureFill type="file" className="border-circle unrotate" size={140} />
+              <input
+                id="file-upload"
+                type="file"
+                className="hidden"
+                onChange={encodeImageFileAsURL}
+              />
+            </label>
             </div>
             <div className="dashBorder-sm flex items-center flex-col ml-96 text-center justify-center">
+              <label htmlFor="file-upload" className="cursor-pointer">
                 <TbPhotoCircle className="border-circle unrotate" size={140}/>
+                <input
+                  id="file-upload"
+                  type="file"
+                  className="hidden"
+                  onChange={encodeImageFileAsURL}
+                />
+              </label>
             </div>
         </form>
       <div className="flex pb-4 w-full items-center">

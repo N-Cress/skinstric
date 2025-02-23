@@ -16,7 +16,7 @@ export default function Home() {
 
     async function formSubmit(event) {
         event.preventDefault();
-        console.log(localStorage.getItem("name"), location)
+        
         axios({
           method: 'post',
           url: 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne',
@@ -28,8 +28,6 @@ export default function Home() {
         .then(function(response) {
           console.log(response)
         });
-
-        localStorage.setItem("name", name);
         router.push('/picture');
     }
     
