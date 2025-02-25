@@ -51,6 +51,27 @@ body, html, #__next {
   rotate: 45deg;
 }
 
+.dashBorder-sm-moving {
+  border: 2px dashed #D3D3D3;
+  height: 302px;
+  width: 302px;
+  animation: spin 48s linear infinite;
+}
+
+.unrotate-anim {
+  animation: unspin 48s linear infinite;
+}
+
+/* Rotates the outer container */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Counter-rotates the text inside */
+@keyframes unspin {
+  100% { transform: rotate(-360deg); }
+}
+
 .dashBorder-left {
   border-right: 2px dashed #D3D3D3;
   border-top: 2px dashed #D3D3D3;
