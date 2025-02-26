@@ -62,12 +62,10 @@ body, html, #__next {
   animation: unspin 48s linear infinite;
 }
 
-/* Rotates the outer container */
 @keyframes spin {
   100% { transform: rotate(360deg); }
 }
 
-/* Counter-rotates the text inside */
 @keyframes unspin {
   100% { transform: rotate(-360deg); }
 }
