@@ -17,7 +17,7 @@ export default function Home() {
         case "main":
           return <PictureHomeComponent status={status} setStatus={setStatus}/>;
         case "loading":
-          return <CameraLoadingComponent status={status}/>;
+          return <CameraLoadingComponent status={status} setStatus={setStatus}/>;
         case "camera":
           return <CameraTakingComponent status={status}/>;
       }

@@ -1,8 +1,35 @@
 import { PiApertureFill } from "react-icons/pi";
 import { PiDiamond } from "react-icons/pi";
-
+import { useEffect } from "react";
 
 export default function CameraLoading() {
+    useEffect(() => {
+      
+        async function startCamera() {
+          try {
+            const stream = await navigator.mediaDevices.getUserMedia({
+              video: { facingMode: "user" },
+            });
+    
+            if (videoRef.current) {
+              videoRef.current.srcObject = stream;
+            }
+          } catch (error) {
+            console.error("Error accessing camera:", error);
+          }
+        }
+    
+        startCamera();
+    
+        return () => {
+      
+          if (videoRef.current && videoRef.current.srcObject) {
+            videoRef.current.srcObject.getTracks().forEach((track) => track.stop());
+          }
+        };
+      }, []);
+
+
     return (
     <div className="flex flex-col items-center justify-center h-full w-full pl-8 pr-8">
             <div className="mb-8 dashBorder-sm-moving flex items-center flex-col text-center justify-center">
