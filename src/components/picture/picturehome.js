@@ -42,15 +42,15 @@ export default function PictureHome({ status, setStatus }) {
       return (
     <div className="flex flex-col items-center justify-between h-full w-full pl-8 pr-8">
         <div className="flex justify-start w-full flex-col font-semibold">
-        <div className="flex justify-between items-center w-full h-16">
-            <div className=""> 
-            SKINSTRIC <span className="grey"> &#91; INTRO &#93; </span>
-            </div>
+          <div className="flex justify-between items-center w-full h-16">
+              <div className=""> 
+              SKINSTRIC <span className="grey"> &#91; INTRO &#93; </span>
+              </div>
+          </div>
+          <div>
+              TO START ANALYSIS 
+          </div>
         </div>
-        <div>
-            TO START ANALYSIS
-        </div>
-      </div>
         <form className="flex w-full justify-center" >
             <div className="dashBorder-sm flex items-center flex-col text-center justify-center">
             <label htmlFor="file-upload" className="cursor-pointer">
