@@ -12,15 +12,13 @@ export default function CameraLoading() {
     startCamera();
     async function startCamera() {
       try {
-        console.log("Starting camera...");
         const stream = await navigator.mediaDevices.getUserMedia({
           video: { facingMode: "user" },
         });
 
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
-          console.log("Camera started successfully!");
-          setLoading(false); // ✅ Camera is ready
+          setLoading(false);
         }
       } catch (error) {
         console.error("Error accessing camera:", error);
@@ -41,25 +39,26 @@ export default function CameraLoading() {
 
       canvas.width = videoRef.current.videoWidth;
       canvas.height = videoRef.current.videoHeight;
-
+      console.log("attempting to take!")
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
       setImage(canvas.toDataURL("image/png"));
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full pl-8 pr-8">
-      {/* Live Video Stream (Visible when ready) */}
-      <video 
-        ref={videoRef} 
-        autoPlay 
-        playsInline 
-        style={{ display: loading ? "none" : "block", width: "100%", maxWidth: "500px" }} 
-      />
-
-      {/* Hidden Canvas for Capturing Image */}
+    <div className={`relative flex flex-col items-center justify-center w-full h-full`}>
+      {!image && (
+        <video 
+          ref={videoRef} 
+          autoPlay 
+          playsInline 
+          className={`absolute top-0 left-0 w-full h-full object-cover ${loading ? "hidden" : "block"}`} 
+        />
+      )
+      }
+  
       <canvas ref={canvasRef} style={{ display: "none" }} />
-
+  
       {loading ? (
         <>
           <div className="mb-8 dashBorder-sm-moving flex items-center flex-col text-center justify-center">
@@ -86,17 +85,18 @@ export default function CameraLoading() {
         </>
       ) : (
         <div>
-          <button onClick={takePicture}>Take Picture</button>
-
-          {/* Show Captured Image */}
+          <button className="fixed bg-sky-50 bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-lg" onClick={takePicture}>
+            Take Picture
+          </button>
           {image && (
             <div>
               <h3>Captured Image</h3>
-              <img src={image} alt="Captured" style={{ width: "100%", maxWidth: "500px" }} />
+              <img src={image} alt="Captured" className="w-full max-w-md mx-auto" />
             </div>
           )}
         </div>
       )}
     </div>
   );
+  
 }

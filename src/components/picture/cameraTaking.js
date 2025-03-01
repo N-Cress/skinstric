@@ -1,48 +1,96 @@
-import { useState, useEffect } from "react";
+import { PiApertureFill } from "react-icons/pi";
+import { PiDiamond } from "react-icons/pi";
+import { useEffect, useRef, useState } from "react";
 
-export default function CameraTaking( {canvasRef, videoRef} ) {
-    const [image, setImage] = useState(null);
+export default function CameraLoading() {
+  const [loading, setLoading] = useState(true);
+  const [image, setImage] = useState(null);
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
 
-    useEffect(() => {
-        videoRef.current.srcObject = stream;
-    })
+  useEffect(() => {
+    startCamera();
+    async function startCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: "user" },
+        });
 
-    const takePicture = () => {
-        if (videoRef.current && canvasRef.current) {
-          const canvas = canvasRef.current;
-          const context = canvas.getContext("2d");
-    
-          // Set canvas size to match video
-          canvas.width = videoRef.current.videoWidth;
-          canvas.height = videoRef.current.videoHeight;
-    
-          // Draw the current frame from the video onto the canvas
-          context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
-    
-          // Convert canvas image to Base64
-          const imageData = canvas.toDataURL("image/png");
-          setImage(imageData);
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+          setLoading(false);
         }
-      };
-    return (
-        <div>
-        <h2>Camera Capture</h2>
-        
-        {/* Live Video Stream */}
-        <video ref={videoRef} autoPlay playsInline style={{ width: "100%", maxWidth: "500px" }} />
-  
-        {/* Hidden Canvas to Capture Image */}
-        <canvas ref={canvasRef} style={{ display: "none" }} />
-  
-        <button onClick={takePicture}>Take Picture</button>
-  
-        {/* Show Captured Image */}
-        {image && (
-          <div>
-            <h3>Captured Image</h3>
-            <img src={image} alt="Captured" style={{ width: "100%", maxWidth: "500px" }} />
+      } catch (error) {
+        console.error("Error accessing camera:", error);
+      }
+    }
+
+    return () => {
+      if (videoRef.current && videoRef.current.srcObject) {
+        videoRef.current.srcObject.getTracks().forEach((track) => track.stop());
+      }
+    };
+  }, []);
+
+  const takePicture = () => {
+    if (videoRef.current && canvasRef.current) {
+      const canvas = canvasRef.current;
+      const context = canvas.getContext("2d");
+
+      canvas.width = videoRef.current.videoWidth;
+      canvas.height = videoRef.current.videoHeight;
+
+      context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+      setImage(canvas.toDataURL("image/png"));
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center h-full w-full pl-8 pr-8">
+      <video 
+        ref={videoRef} 
+        autoPlay 
+        playsInline 
+        style={{ display: loading ? "none" : "block", width: "100%", maxWidth: "500px" }} 
+      />
+
+      <canvas ref={canvasRef} style={{ display: "none" }} />
+
+      {loading ? (
+        <>
+          <div className="mb-8 dashBorder-sm-moving flex items-center flex-col text-center justify-center">
+            <div className="flex flex-col items-center unrotate-anim">
+              <PiApertureFill className="font-bold border-circle unrotate" size={140} />
+              <div className="pt-4">SETTING UP CAMERA...</div>
+            </div>
           </div>
-        )}
-      </div>
-    )
+          <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
+          <div className="flex text-xs mt-2">
+            <div className="flex items-center justify-center">
+              <PiDiamond className="mr-2" />
+              <div>NEUTRAL EXPRESSION</div>
+            </div>
+            <div className="pl-4 flex items-center justify-center">
+              <PiDiamond className="mr-2" />
+              <div>FRONTAL POSE</div>
+            </div>
+            <div className="pl-4 flex items-center justify-center">
+              <PiDiamond className="mr-2" />
+              <div>ADEQUATE LIGHTING</div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div>
+          <button onClick={takePicture}>Take Picture</button>
+          {image && (
+            <div>
+              <h3>Captured Image</h3>
+              <img src={image} alt="Captured" style={{ width: "100%", maxWidth: "500px" }} />
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
 }
