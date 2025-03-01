@@ -89,6 +89,24 @@ body, html, #__next {
   width: 600px;
 }
 
+.white {
+  color: white;
+}
+
+.white-bg {
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.white-bg-inner {
+  background-color: white;
+  color: grey;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
 .unrotate {
   rotate: -45deg;
 }

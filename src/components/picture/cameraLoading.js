@@ -1,6 +1,8 @@
 import { PiApertureFill } from "react-icons/pi";
 import { PiDiamond } from "react-icons/pi";
 import { useEffect, useRef, useState } from "react";
+import { CiCamera } from "react-icons/ci";
+
 
 export default function CameraLoading() {
   const [loading, setLoading] = useState(true);
@@ -85,14 +87,61 @@ export default function CameraLoading() {
         </>
       ) : (
         <div>
-          <button className="fixed bg-sky-50 bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-lg" onClick={takePicture}>
-            Take Picture
-          </button>
+          <div className="white flex fixed bottom-1/2 right-0  px-4 py-2">
+            <button className="flex items-center px-4 py-2 rounded-lg" onClick={takePicture}>
+              Take Picture
+              <div className="ml-2 white-bg">
+                <div className="white-bg-inner">
+                  <CiCamera size={20}/>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div className="white fixed flex flex-col items-center bottom-2 left-[625px]">
+            <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
+            <div className="flex text-xs mt-2">
+              <div className="flex items-center justify-center">
+                <PiDiamond className="mr-2" />
+                <div>NEUTRAL EXPRESSION</div>
+              </div>
+              <div className="pl-4 flex items-center justify-center">
+                <PiDiamond className="mr-2" />
+                <div>FRONTAL POSE</div>
+              </div>
+              <div className="pl-4 flex items-center justify-center">
+                <PiDiamond className="mr-2" />
+                <div>ADEQUATE LIGHTING</div>
+              </div>
+          </div>
+          </div>
           {image && (
-            <div>
-              <h3>Captured Image</h3>
-              <img src={image} alt="Captured" className="w-full max-w-md mx-auto" />
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black">
+              <img src={image} alt="Captured" className="w-full h-full object-cover" />
+              <button
+                className="absolute top-4 right-4 bg-white px-4 py-2 rounded-lg shadow-lg"
+                onClick={() => setImage(null)}
+              >
+                Retake
+              </button>
+              <div className="white fixed flex flex-col items-center bottom-2 left-[625px]">
+            <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
+            <div className="flex text-xs mt-2">
+              <div className="flex items-center justify-center">
+                <PiDiamond className="mr-2" />
+                <div>NEUTRAL EXPRESSION</div>
+              </div>
+              <div className="pl-4 flex items-center justify-center">
+                <PiDiamond className="mr-2" />
+                <div>FRONTAL POSE</div>
+              </div>
+              <div className="pl-4 flex items-center justify-center">
+                <PiDiamond className="mr-2" />
+                <div>ADEQUATE LIGHTING</div>
+              </div>
+              </div>
+              </div>
             </div>
+            
           )}
         </div>
       )}
