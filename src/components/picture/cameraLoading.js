@@ -2,13 +2,15 @@ import { PiApertureFill } from "react-icons/pi";
 import { PiDiamond } from "react-icons/pi";
 import { useEffect, useRef, useState } from "react";
 import { CiCamera } from "react-icons/ci";
-
+import { MdPlayArrow } from "react-icons/md";
+import { useRouter } from 'next/router';
 
 export default function CameraLoading() {
   const [loading, setLoading] = useState(true);
   const [image, setImage] = useState(null);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     startCamera();
@@ -46,6 +48,24 @@ export default function CameraLoading() {
       setImage(canvas.toDataURL("image/png"));
     }
   };
+
+  function reloadDoc() {
+    window.location.reload();
+  }
+
+  async function submitCapture() {
+    try {
+      const base64String = image.split(",")[1];
+  
+      router.push({
+        pathname: "/results",
+        query: { base64: encodeURIComponent(base64String) },
+      });
+    } catch (error) {
+      console.error("Error reading file:", error);
+    }
+  }
+
 
   return (
     <div className={`relative flex flex-col items-center justify-center w-full h-full`}>
@@ -97,7 +117,7 @@ export default function CameraLoading() {
               </div>
             </button>
           </div>
-          <div className="white fixed flex flex-col items-center bottom-2 left-[625px]">
+          <div className="white fixed flex flex-col items-center bottom-8 left-[700px]">
             <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
             <div className="flex text-xs mt-2">
               <div className="flex items-center justify-center">
@@ -117,13 +137,24 @@ export default function CameraLoading() {
           {image && (
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black">
               <img src={image} alt="Captured" className="w-full h-full object-cover" />
-              <button
-                className="absolute top-4 right-4 bg-white px-4 py-2 rounded-lg shadow-lg"
-                onClick={() => setImage(null)}
-              >
-                Retake
-              </button>
-              <div className="white fixed flex flex-col items-center bottom-2 left-[625px]">
+              <div className="absolute top-2 left-4 white"> 
+                SKINSTRIC <span className="grey"> &#91; ANALYSIS &#93; </span>
+              </div>
+              <div className="absolute top-52 white"> Great Shot!</div>
+              <div className="absolute bottom-8 right-8 flex white items-center">
+                <div> Proceed </div>
+                  <div onClick={submitCapture} className="cursor-pointer border-white ml-4"> 
+                    <MdPlayArrow className="rotate-[75deg]" size={20}/>
+                  </div>
+                
+              </div>
+              <div className="absolute bottom-8 left-8 flex white items-center">
+                <div onClick={reloadDoc} className="border-white mr-4"> 
+                  <MdPlayArrow className="rotate-[135deg]" size={20}/>
+                </div>
+                <div> Back </div>
+              </div>
+              <div className="white fixed flex flex-col items-center bottom-8 left-[700px]">
             <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
             <div className="flex text-xs mt-2">
               <div className="flex items-center justify-center">

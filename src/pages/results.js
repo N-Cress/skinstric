@@ -22,21 +22,21 @@ export default function Home() {
       }
     }
 
-    // const { base64 } = router.query;
-    // useEffect(() => {
-    //     setLoading(true);
-    //     axios({
-    //         method: 'post',
-    //         url: 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo',
-    //         data: {
-    //             image: base64
-    //         }
-    //       })
-    //       .then(function(response) {
-    //         console.log(response)
+    const { base64 } = router.query;
+    useEffect(() => {
+        
+        axios({
+            method: 'post',
+            url: 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo',
+            data: {
+                image: base64
+            }
+          })
+          .then(function(response) {
+            console.log(response)
             
-    //       })
-    // }, [base64, axios])
+          })
+    }, [base64, axios])
 
 
   return (
