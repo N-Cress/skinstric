@@ -16,9 +16,9 @@ export default function Home() {
         case "loading":
           return < > </>;
         case "cat":
-          return <ResultsCategories />;
+          return <ResultsCategories status={status} setStatus={setStatus}/>;
         case "demos":
-          return < > </>
+          return <ResultsData status={status} setStatus={setStatus}/>;
       }
     }
     const renderSubMessage = (status) => {
