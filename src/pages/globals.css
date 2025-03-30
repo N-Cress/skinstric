@@ -137,6 +137,8 @@ input:focus {
   text-decoration: none;
 }
 
+/* resultCategories styling for the diamond */
+
 .fourdiamond {
   border: 2px dashed #D3D3D3;
   padding: 40px;
@@ -145,7 +147,7 @@ input:focus {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  transform: rotate(45deg);
+  
   overflow: hidden;
   position: relative;
 }
@@ -165,3 +167,19 @@ input:focus {
 .right:hover {background: #E1E1E2; cursor: pointer;}
 .top:hover {background: #E1E1E2; cursor: pointer;}
 .bottom:hover {background: #E1E1E2; cursor: pointer;}
+
+/* resultsData */
+
+.grey-hover:hover {
+  background: #E1E1E2;
+  cursor: pointer;
+}
+
+
+/* Reuse for common style fixes */
+
+.outerBorder {
+  border: 2px dashed #e0e0e0;
+  transform: rotate(45deg);
+  padding: 40px;
+}

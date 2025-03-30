@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useState, useEffect } from 'react';
 import ResultsCategories from "@/components/results/resultsCategories";
+import ResultsData from "@/components/results/resultsData";
 
 export default function Home() {
     // const axios = require('axios');
@@ -31,7 +32,10 @@ export default function Home() {
             <div className="font-normal" > FIX ESTIMATED INFORMATION IF NEEDED. </div>
           </>;
         case "demos":
-          return < > </>
+          return < > 
+            <div className="font-bold text-5xl pb-2"> DEMOGRAPHICS </div>
+            <div className="font-normal text-xs mb-32"> PREDICTED RACE & AGE </div>
+          </>
       }
     }
 
@@ -56,7 +60,7 @@ export default function Home() {
     <main className="w-full h-full flex flex-col items-center ">
       <div className="pl-4 flex justify-start w-full flex-col font-semibold">
         <div className="flex justify-between items-center w-full h-16">
-            <div className=""> 
+            <div className="pb-4"> 
             SKINSTRIC <span className="grey"> &#91; ANALYSIS &#93; </span>
             </div>
         </div>
