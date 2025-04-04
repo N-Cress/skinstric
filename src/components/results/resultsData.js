@@ -22,17 +22,17 @@ export default function ResultsData({setStatus}) {
                 <div> SEX </div>
             </div>
         </div> 
-        <div className="mr-4 ml-4 w-7/12 border-t-2 border-black">
-            <div>
+        <div className="flex mr-4 ml-4 w-7/12 border-t-2 border-black">
+            <div className="pl-4 w-full pt-2 font-medium text-4xl">
                 20-29 y.o.
             </div>
-            <div>
-                <div>
-                    96%
+            <div className="flex justify-end pr-10 items-center ">
+                <div className="flex font-medium text-4xl perc-circle">
+                    96 <span className="text-sm"> % </span>
                 </div>
             </div>
         </div>
-        <div className="w-4/12 border-t-2 border-black">
+        <div className="w-3/12 border-t-2 border-black">
             f
         </div>
     </div>
