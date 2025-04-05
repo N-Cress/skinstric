@@ -1,7 +1,14 @@
 import { MdPlayArrow } from "react-icons/md";
+import { BsDiamond } from "react-icons/bs"
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function ResultsData({setStatus}) {
+    const [category, setCategory] = useState("age");
+    const [race, setRace] = useState("eastAsian");
+    const [age, setAge] = useState("20-29");
+    const [sex, setSex] = useState("female");
+
   function statusToDemos() {
     setStatus("demos")
   }
@@ -32,8 +39,91 @@ export default function ResultsData({setStatus}) {
                 </div>
             </div>
         </div>
-        <div className="w-3/12 border-t-2 border-black">
-            f
+        <div className="w-3/12 border-t-2 border-black pl-4 pr-4">
+            <div className="flex justify-between pt-2 ">
+                <div> RACE </div>
+                <div> A.I. CONFIDENCE </div>
+            </div>
+            <div className="flex justify-between grey-hover mt-2 pt-2 pb-2 pl-2 pr-2">
+                <div className="flex items-center"> 
+                   <BsDiamond className=" pr-1"/>
+                   <div> 0-9</div>
+                </div>
+                <div className="flex">
+                    <div> 96</div>
+                    <div> % </div>
+                </div>
+            </div>
+            <div className="flex justify-between grey-hover p-2">
+                <div className="flex items-center"> 
+                   <BsDiamond className=" pr-1"/>
+                   <div> 10-19</div>
+                </div>
+                <div className="flex">
+                    <div> 96</div>
+                    <div> % </div>
+                </div>
+            </div>
+            <div className="flex justify-between grey-hover p-2">
+                <div className="flex items-center"> 
+                   <BsDiamond className=" pr-1"/>
+                   <div> 20-29</div>
+                </div>
+                <div className="flex">
+                    <div> 96</div>
+                    <div> % </div>
+                </div>
+            </div>
+            <div className="flex justify-between grey-hover p-2">
+                <div className="flex items-center"> 
+                   <BsDiamond className=" pr-1"/>
+                   <div> 30-39</div>
+                </div>
+                <div className="flex">
+                    <div> 96</div>
+                    <div> % </div>
+                </div>
+            </div>
+            <div className="flex justify-between grey-hover p-2">
+                <div className="flex items-center"> 
+                   <BsDiamond className=" pr-1"/>
+                   <div> 40-49</div>
+                </div>
+                <div className="flex">
+                    <div> 96</div>
+                    <div> % </div>
+                </div>
+            </div>
+            <div className="flex justify-between grey-hover p-2">
+                <div className="flex items-center"> 
+                   <BsDiamond className=" pr-1"/>
+                   <div> 50-59</div>
+                </div>
+                <div className="flex">
+                    <div> 96</div>
+                    <div> % </div>
+                </div>
+            </div>
+            <div className="flex justify-between grey-hover p-2">
+                <div className="flex items-center"> 
+                   <BsDiamond className=" pr-1"/>
+                   <div> 60-69</div>
+                </div>
+                <div className="flex">
+                    <div> 96</div>
+                    <div> % </div>
+                </div>
+            </div>
+            <div className="flex justify-between grey-hover p-2">
+                <div className="flex items-center"> 
+                   <BsDiamond className=" pr-1"/>
+                   <div> 70+</div>
+                </div>
+                <div className="flex">
+                    <div> 96</div>
+                    <div> % </div>
+                </div>
+            </div>
         </div>
     </div>
   )
