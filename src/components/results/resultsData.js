@@ -6,7 +6,11 @@ import RaceData from "./resultsData/RaceData";
 import SexData from "./resultsData/SexData";
 import { useState } from 'react';
 
-export default function ResultsData({setStatus, age, sex, race, setAge, setSex, setRace}) {
+export default function ResultsData({setStatus, age, sex, race, setAge, setSex, setRace, 
+    pWhite, pBlack, pEAsian, pSEAsian, pMiddleEastern, pSAsian, pLatino, 
+    pOnes, pTeens, pTwenties, pThirties, pForties, pFifties, pSixties, pSeventies, 
+    pMale, pFemale}) {
+
     const [category, setCategory] = useState("age");
   
 
@@ -17,11 +21,14 @@ export default function ResultsData({setStatus, age, sex, race, setAge, setSex, 
   const catDisplayed = (category) => {
     switch(category) {
         case "age" :
-            return <AgeData age={age} setAge={setAge} />;
+            return <AgeData age={age} setAge={setAge} 
+            pOnes={pOnes} pTeens={pTeens} pTwenties={pTwenties} pThirties={pThirties} pForties={pForties} pFifties={pFifties} pSixties={pSixties} pSeventies={pSeventies}/>;
         case "race":
-            return <RaceData race={race} setRace={setRace} />;
+            return <RaceData race={race} setRace={setRace} 
+            pWhite={pWhite} pBlack={pBlack} pEAsian={pEAsian} pSEAsian={pSEAsian} pMiddleEastern={pMiddleEastern} pSAsian={pSAsian} pLatino={pLatino}/>;
         case "sex":
-            return  <SexData sex={sex} setSex={setSex} />;
+            return  <SexData sex={sex} setSex={setSex} 
+            pMale={pMale} pFemale={pFemale}/>;
     }
   }
 

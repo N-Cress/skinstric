@@ -1,7 +1,7 @@
 import { BsDiamond } from "react-icons/bs"
 import { useState, useEffect } from 'react';
 
-export default function SexData({sex, setSex}) {
+export default function SexData({sex, setSex, pMale, pFemale}) {
      let [normSex, setNormSex] = useState(sex);
     
         useEffect(() => {
@@ -24,7 +24,7 @@ export default function SexData({sex, setSex}) {
             </div>
             <div className="flex justify-end pr-10 items-center ">
                 <div className="flex font-medium text-4xl perc-circle">
-                    96 <span className="text-sm"> % </span>
+                    {sex === "MALE" ? pMale.toString().substring(2, 4) : pFemale.toString().substring(2, 4)} <span className="text-sm"> % </span>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@ export default function SexData({sex, setSex}) {
                 <div>Male</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pMale.toString().substring(2, 4)}</div>
                 <div>%</div>
             </div>
             </div>
@@ -59,7 +59,7 @@ export default function SexData({sex, setSex}) {
                 <div>Female</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pFemale.toString().substring(2, 4)}</div>
                 <div>%</div>
             </div>
             </div>
