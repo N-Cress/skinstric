@@ -1,8 +1,27 @@
 import { BsDiamond } from "react-icons/bs"
 import { useState, useEffect } from 'react';
 
-export default function RaceData({race, setRace}) {
+export default function RaceData({race, setRace, pWhite, pBlack, pEAsian, pSEAsian, pMiddleEastern, pSAsian, pLatino}) {
     let [normRace, setNormRace] = useState(race);
+
+    function mainPerc(race) {
+        switch(race) {
+            case "EAST ASIAN":
+                return pEAsian.toString().substring(2, 4)
+            case "WHITE":
+                return pWhite.toString().substring(2, 4)
+            case "BLACK":
+                return pBlack.toString().substring(2, 4)
+            case "SOUTH ASIAN":
+                return pSAsian.toString().substring(2, 4)
+            case "LATINO HISPANIC":
+                return pLatino.toString().substring(2, 4)
+            case "SOUTH EAST ASIAN":
+                return pSEAsian.toString().substring(2, 4)
+            case "MIDDLE EASTERN":
+                return pMiddleEastern.toString().substring(2, 4)
+        }
+    }
 
     useEffect(() => {
         function captializeFirstLetter() {
@@ -25,10 +44,10 @@ export default function RaceData({race, setRace}) {
             <div className="pl-4 w-full pt-2 font-medium text-4xl">
                 {normRace}
             </div>
-            <div className="flex justify-end pr-10 items-center ">
-                <div className="flex font-medium text-4xl perc-circle">
-                    96 <span className="text-sm"> % </span>
+            <div className="flex justify-end pr-10 items-center circle-wrapper">
+                <div className="flex font-medium text-4xl perc-circle" style={{ "--percent": `${mainPerc(race)}%` }}>
                 </div>
+                <div className="label text-4xl"> {mainPerc(race)} <span className="text-sm"> % </span> </div>
             </div>
         </div>
         <div className="w-3/12 border-t-2 border-black pl-4 pr-4 slight-grey-background">
@@ -47,7 +66,7 @@ export default function RaceData({race, setRace}) {
                 <div>East Asian</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pEAsian.toString().substring(2,4)}</div>
                 <div>%</div>
             </div>
             </div>
@@ -62,7 +81,7 @@ export default function RaceData({race, setRace}) {
                 <div>White</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pWhite.toString().substring(2,4)}</div>
                 <div>%</div>
             </div>
             </div>
@@ -77,7 +96,7 @@ export default function RaceData({race, setRace}) {
                 <div>Black</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pBlack.toString().substring(2,4)}</div>
                 <div>%</div>
             </div>
             </div>
@@ -92,7 +111,7 @@ export default function RaceData({race, setRace}) {
                 <div>South Asian</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pSAsian.toString().substring(2,4)}</div>
                 <div>%</div>
             </div>
             </div>
@@ -107,7 +126,7 @@ export default function RaceData({race, setRace}) {
                 <div>Latino Hispanic</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pLatino.toString().substring(2,4)}</div>
                 <div>%</div>
             </div>
             </div>
@@ -122,7 +141,7 @@ export default function RaceData({race, setRace}) {
                 <div>South East Asian</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pSEAsian.toString().substring(2,4)}</div>
                 <div>%</div>
             </div>
             </div>
@@ -137,7 +156,7 @@ export default function RaceData({race, setRace}) {
                 <div>Middle Eastern</div>
             </div>
             <div className="flex">
-                <div>96</div>
+                <div>{pMiddleEastern.toString().substring(2,4)}</div>
                 <div>%</div>
             </div>
             </div>

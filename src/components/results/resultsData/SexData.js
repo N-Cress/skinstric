@@ -4,6 +4,15 @@ import { useState, useEffect } from 'react';
 export default function SexData({sex, setSex, pMale, pFemale}) {
      let [normSex, setNormSex] = useState(sex);
     
+     function mainPerc(sex) {
+        switch(sex) {
+            case "MALE":
+                return pMale.toString().substring(2, 4)
+            case "FEMALE":
+                return pFemale.toString().substring(2, 4)
+        }
+    }
+
         useEffect(() => {
             function captializeFirstLetter() {
                 let string = sex.split('')
@@ -22,10 +31,10 @@ export default function SexData({sex, setSex, pMale, pFemale}) {
             <div className="pl-4 w-full pt-2 font-medium text-4xl">
                 {normSex}
             </div>
-            <div className="flex justify-end pr-10 items-center ">
-                <div className="flex font-medium text-4xl perc-circle">
-                    {sex === "MALE" ? pMale.toString().substring(2, 4) : pFemale.toString().substring(2, 4)} <span className="text-sm"> % </span>
+            <div className="flex justify-end pr-10 items-center circle-wrapper">
+                <div className="flex font-medium text-4xl perc-circle" style={{ "--percent": `${mainPerc(sex)}%` }}>
                 </div>
+                <div className="label text-4xl"> {mainPerc(sex)} <span className="text-sm"> % </span> </div>
             </div>
         </div>
         <div className="w-3/12 border-t-2 border-black pl-4 pr-4 slight-grey-background">
