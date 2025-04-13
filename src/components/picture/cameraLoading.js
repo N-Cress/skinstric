@@ -43,7 +43,6 @@ export default function CameraLoading() {
 
       canvas.width = videoRef.current.videoWidth;
       canvas.height = videoRef.current.videoHeight;
-      console.log("attempting to take!")
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
       setImage(canvas.toDataURL("image/png"));
     }
@@ -117,7 +116,7 @@ export default function CameraLoading() {
               </div>
             </button>
           </div>
-          <div className="white fixed flex flex-col items-center bottom-8 left-[700px]">
+          <div className="white fixed flex flex-col items-center bottom-8 left-[50%] translate-x-[-50%]">
             <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
             <div className="flex text-xs mt-2">
               <div className="flex items-center justify-center">
@@ -154,7 +153,7 @@ export default function CameraLoading() {
                 </div>
                 <div> Back </div>
               </div>
-              <div className="white fixed flex flex-col items-center bottom-8 left-[700px]">
+              <div className="white fixed flex flex-col items-center bottom-8 left-[50%] translate-x-[-50%]">
             <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
             <div className="flex text-xs mt-2">
               <div className="flex items-center justify-center">
