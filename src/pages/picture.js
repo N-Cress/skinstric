@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import PictureHomeComponent from "@/components/picture/picturehome";
 import CameraLoadingComponent from "@/components/picture/cameraLoading";
-import "./globals.css";
 
 export default function Home() {
   const [status, setStatus] = useState("main"); 
