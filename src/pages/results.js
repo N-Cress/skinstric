@@ -52,12 +52,16 @@ export default function Home() {
       alert("This is a demo. These values are not submitted anywhere at this");
     }
 
-    const [status, setStatus] = useState("cat");
+    const [status, setStatus] = useState("loading");
 
     const renderContent = (status) => {
       switch(status) {
         case "loading":
-          return < > </>;
+          return <div className="flex items-center justify-center w-full h-full">
+            <div className="dashBorder-sm-moving flex items-center justify-center">
+              <div className="unrotate-anim"> PREPARING YOUR ANALYSIS... </div>
+            </div>
+          </div>;
         case "cat":
           return <ResultsCategories status={status} setStatus={setStatus}/>;
         case "demos":
@@ -209,8 +213,8 @@ export default function Home() {
             const age = response.data.data.age;
             const sex = response.data.data.gender;
             
+            setStatus("cat");
             console.log(response)
-
             setRaceData(race);
             setAgeData(age);
             setSexData(sex);
@@ -247,6 +251,7 @@ export default function Home() {
 
   return (
     <main className="w-full h-full flex flex-col items-center ">
+      { status === "loading" ? <> </> :
       <div className="pl-4 flex justify-start w-full flex-col font-semibold">
         <div className="flex justify-between items-center w-full h-16">
             <div className="pb-4"> 
@@ -258,6 +263,7 @@ export default function Home() {
         </div>
         {renderSubMessage(status)}
       </div>
+      }
        {renderContent(status)}
        <div className="pl-4 flex pb-6 w-full justify-between items-center">
             {renderBackButton(status)}
