@@ -49,7 +49,7 @@ export default function Home() {
     }
 
     function submitValues() {
-      alert("This is a demo. These values are not submitted anywhere at this");
+      alert("This is a demo. These values are not submitted anywhere at this time.");
     }
 
     const [status, setStatus] = useState("loading");
