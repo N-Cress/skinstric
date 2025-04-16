@@ -5,6 +5,7 @@ export default function RaceData({race, setRace, pWhite, pBlack, pEAsian, pSEAsi
     let [normRace, setNormRace] = useState(race);
 
     function mainPerc(race) {
+        console.log("main" + race)
         switch(race) {
             case "EAST ASIAN":
                 return pEAsian.toString().substring(2, 4)
@@ -16,7 +17,7 @@ export default function RaceData({race, setRace, pWhite, pBlack, pEAsian, pSEAsi
                 return pSAsian.toString().substring(2, 4)
             case "LATINO HISPANIC":
                 return pLatino.toString().substring(2, 4)
-            case "SOUTH EAST ASIAN":
+            case "SOUTHEAST ASIAN":
                 return pSEAsian.toString().substring(2, 4)
             case "MIDDLE EASTERN":
                 return pMiddleEastern.toString().substring(2, 4)
@@ -24,6 +25,7 @@ export default function RaceData({race, setRace, pWhite, pBlack, pEAsian, pSEAsi
     }
 
     useEffect(() => {
+        console.log(race)
         function captializeFirstLetter() {
             let string = race.split('')
             for (let i = 0; i < string.length; i++) {
@@ -132,9 +134,9 @@ export default function RaceData({race, setRace, pWhite, pBlack, pEAsian, pSEAsi
             </div>
             <div 
             className={`flex justify-between p-2 items-center cursor-pointer ${
-                race === "SOUTH EAST ASIAN" ? "bg-black text-white" : "grey-hover"
+                race === "SOUTHEAST ASIAN" ? "bg-black text-white" : "grey-hover"
             }`} 
-            onClick={() => setRace("SOUTH EAST ASIAN")}
+            onClick={() => setRace("SOUTHEAST ASIAN")}
             >
             <div className="flex items-center">
                 <BsDiamond className="pr-1"/>

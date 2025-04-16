@@ -18,7 +18,7 @@ export default function Home() {
         
         axios({
           method: 'post',
-          url: 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne',
+          url: 'https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne',
           data: {
               name: localStorage.getItem("name"), 
               location: location

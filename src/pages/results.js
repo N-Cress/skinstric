@@ -203,7 +203,7 @@ export default function Home() {
         
         axios({
             method: 'post',
-            url: 'https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo',
+            url: 'https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo',
             data: {
                 image: base64
             }
