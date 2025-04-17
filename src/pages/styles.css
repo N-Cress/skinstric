@@ -14,12 +14,20 @@ body, html, #__next {
   font-family: rooSub;
 }
 
+.arrowIcon {
+  width: 30px;
+  height: 30px;
+}
+
 .grey {
   color: #a9a9a9;
 }
 
 .placeholder-black ::placeholder {
   color: black;
+}
+.placeholder-black:focus {
+  text-decoration: underline;
 }
 
 .button {
@@ -88,8 +96,8 @@ body, html, #__next {
   border-top: 2px dashed #D3D3D3;
   rotate: 45deg;
   position: fixed;
-  height: 600px;
-  width: 600px;
+  height: 550px;
+  width: 550px;
   left: -430px;
 }
 
@@ -98,8 +106,8 @@ body, html, #__next {
   border-bottom: 2px dashed #D3D3D3;
   rotate: 45deg;
   position: fixed;
-  height: 600px;
-  width: 600px;
+  height: 450px;
+  width: 450px;
 }
 
 .white {
@@ -135,6 +143,11 @@ body, html, #__next {
 
 .textfield:focus {
   outline: none;
+  background-color: white;
+}
+
+.textfield:active {
+  background-color: white;
 }
 
 input:focus::placeholder {
@@ -143,6 +156,7 @@ input:focus::placeholder {
 
 input:focus {
   text-decoration: none;
+  background-color: white;
 }
 
 /* line for picture icons descriptions */
@@ -309,6 +323,13 @@ input:focus {
 }
 
 /* Media Queries */
+@media (max-width: 1243px) {
+  .title {
+    font-size: 96px;
+    padding-right: 60px;
+  }
+}
+
 @media (max-width: 1150px) {
   .dashBorder-sm {
     width: 250px;
@@ -332,9 +353,35 @@ input:focus {
   }
 }
 
+@media (max-width: 1020px) {
+  .title {
+    font-size: 64px;
+    width: 50%;
+    padding-left: 12px;
+  }
+  .dashBorder-left {
+    height: 550px;
+    width: 550px;
+    left: -430px;
+  }
+  
+  .dashBorder-right {
+    height: 400px;
+    width: 400px;
+    
+  }
+}
+
 @media (max-width: 825px) {
   .perc-circle {
     --size: 200px; 
+  }
+  .title {
+    font-size: 48px;
+  }
+  .dashBorder-right {
+    height: 350px;
+    width: 350px;
   }
 }
 
@@ -372,6 +419,22 @@ input:focus {
   }
 }
 
+@media (max-width: 750px) {
+  .dashBorder-left {
+    display: none;
+  }
+  .dashBorder-right {
+    display: none;
+  }
+  .title {
+    padding: 0px;
+  }
+  .arrowIcon {
+    height: 20px;
+    width: 20px;
+  }
+}
+
 @media (max-width: 640px) {
   .responsive-icon {
     height: 100px;
@@ -387,6 +450,10 @@ input:focus {
   .iconLine-left {
     left: 43%;
   }
+  .arrowIcon {
+    height: 15px;
+    width: 15px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -396,6 +463,9 @@ input:focus {
   }
   .part {
     font-size: 12px;
+  }
+  .title {
+    font-size: 36px;
   }
 }
 

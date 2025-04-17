@@ -6,6 +6,8 @@ import { useRouter } from 'next/router';
 export default function Home() {
     const router = useRouter();
     const [location, setLocation] = useState("");
+    const [isFocused, setIsFocused] = useState(false)
+
     const axios = require('axios');
 
 
@@ -46,8 +48,9 @@ export default function Home() {
         <form onSubmit={formSubmit}>
           <div className="outerBorder "> 
             <div className="outerBorder-unrotate dashBorder flex items-center flex-col text-center justify-center pl-6 sm:pl-4">
-                <div className="grey textlabel text-sm unrotate pb-4 pr-12"> CLICK TO TYPE </div>
-                <input onChange={changeHandler} value={location} required id="location" className="textfield placeholder-black decoration-[1px] text-center underline underline-offset-2 text-black unrotate text-xl sm:text-3xl md:text-5xl sm:underline-offset-4 md:underline-offset-8" type="text" placeholder="Where are you from?" />
+                <div className="grey textlabel text-sm unrotate pb-4 pr-12"> {isFocused ? "WHERE ARE YOU FROM?" : "CLICK TO TYPE"} </div>
+                <input onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false) }
+                onChange={changeHandler} value={location} required id="location" className="textfield pl-4 placeholder-black decoration-[1px] text-center underline underline-offset-2 text-black unrotate text-xl sm:text-3xl md:text-5xl sm:underline-offset-4 md:underline-offset-8" type="text" placeholder="Where are you from?" />
             </div>
           </div>
         </form>

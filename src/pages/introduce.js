@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 export default function Home() {
     const router = useRouter();
     const [name, setName] = useState("");
+    const [isFocused, setIsFocused] = useState(false);
 
     function changeHandler(event) {
         setName(event.target.value)
@@ -32,9 +33,10 @@ export default function Home() {
       </div>
         <form onSubmit={formSubmit}>
           <div className="outerBorder ">
-            <div className="dashBorder outerBorder-unrotate flex items-center pl-6 flex-col text-center justify-center w-full h-full sm:pl-4">
-                <div className="grey textlabel text-center unrotate pb-4 pr-12 text-xs sm:pr-12"> CLICK TO TYPE </div>
-                <input onChange={changeHandler} value={name} required id="name" className="textfield placeholder-black decoration-[1px] text-center underline underline-offset-2 text-black unrotate text-xl sm:text-3xl md:text-5xl sm:underline-offset-4 md:underline-offset-8" type="text" placeholder="Introduce Yourself" />
+            <div className="dashBorder outerBorder-unrotate flex items-center flex-col text-center justify-center w-full h-full sm:pl-4">
+                <div className="grey textlabel text-center unrotate pb-4 pr-12 text-xs sm:pr-12"> {isFocused ? "WHAT IS YOUR NAME?" : "CLICK TO TYPE"} </div>
+                <input onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false) } 
+                onChange={changeHandler} value={name} required id="name" className="textfield pl-4 placeholder-black decoration-[1px] text-center underline underline-offset-2 text-black unrotate text-xl sm:text-3xl md:text-5xl sm:underline-offset-4 md:underline-offset-8" type="text" placeholder="Introduce Yourself" />
             </div>
           </div>
         </form>
