@@ -18,6 +18,10 @@ body, html, #__next {
   color: #a9a9a9;
 }
 
+.placeholder-black ::placeholder {
+  color: black;
+}
+
 .button {
   color: white;
   padding: 8px 16px;
@@ -120,6 +124,10 @@ body, html, #__next {
   rotate: -45deg;
 }
 
+.outerBorder-unrotate {
+  rotate: 0deg;
+}
+
 .textfield {
   overflow: hidden;
   width: 100%;
@@ -136,6 +144,45 @@ input:focus::placeholder {
 input:focus {
   text-decoration: none;
 }
+
+/* line for picture icons descriptions */
+
+.absoluteTarget {
+  position: relative;
+}
+
+.iconLine {
+  border-bottom: 1px solid black;
+  rotate: -90deg;
+  position: absolute;
+  width: 80px;
+  left: 38%;
+  top: 87%;
+}
+
+.iconText {
+  overflow: visible;
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  rotate: -45deg;
+  transform: translate(-60%, -30%);
+  font-size: 12px;
+  width: 110px;
+  text-align: end;
+}
+
+.iconDot {
+  padding: 3px;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 50%;
+  left: 50%;
+  top: 99%;
+  background-color: white;
+  z-index: 100;
+}
+
 
 /* resultCategories styling for the diamond */
 
@@ -216,7 +263,7 @@ input:focus {
 .outerBorder {
   border: 2px dashed #e0e0e0;
   transform: rotate(45deg);
-  padding: 40px;
+  padding: 30px;
 }
 
 .responsive-icon {
@@ -239,6 +286,9 @@ input:focus {
 }
 
 @media (max-width: 768px) {
+  .placeholder-black {
+    text-decoration: underline;
+  }
   .dashBorder {
     width: 300px;
     height: 300px;
@@ -253,6 +303,9 @@ input:focus {
   }
   .part {
     font-size: 16px;
+  }
+  .outerBorder {
+    padding: 20px;
   }
 }
 
@@ -285,5 +338,8 @@ input:focus {
   .dashBorder-sm {
     width: 120px;
     height: 120px;
+  }
+  .outerBorder {
+    padding: 5px;
   }
  }

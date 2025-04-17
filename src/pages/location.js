@@ -44,10 +44,12 @@ export default function Home() {
         </div>
       </div>
         <form onSubmit={formSubmit}>
-            <div className="dashBorder flex items-center flex-col text-center justify-center pl-6 sm:pl-4">
+          <div className="outerBorder "> 
+            <div className="outerBorder-unrotate dashBorder flex items-center flex-col text-center justify-center pl-6 sm:pl-4">
                 <div className="grey textlabel text-sm unrotate pb-4 pr-12"> CLICK TO TYPE </div>
-                <input onChange={changeHandler} value={location} required id="location" className="textfield decoration-[1px] text-center underline underline-offset-8 font-light unrotate text-xl sm:text-3xl md:text-5xl" type="text" placeholder="Where are you from?" />
+                <input onChange={changeHandler} value={location} required id="location" className="textfield placeholder-black decoration-[1px] text-center underline underline-offset-2 text-black unrotate text-xl sm:text-3xl md:text-5xl sm:underline-offset-4 md:underline-offset-8" type="text" placeholder="Where are you from?" />
             </div>
+          </div>
         </form>
       <div className="flex pb-4 w-full items-center">
           <Link href="/introduce"> 

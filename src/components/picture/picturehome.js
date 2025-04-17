@@ -58,16 +58,21 @@ export default function PictureHome({ status, setStatus }) {
         
             </label>
             </div>
-            <div className="dashBorder-sm flex items-center flex-col text-center justify-center">
-              <label htmlFor="file-upload" className="cursor-pointer">
-                <TbPhotoCircle className="border-circle unrotate responsive-icon"/>
-                <input
-                  id="file-upload"
-                  type="file"
-                  className="hidden"
-                  onChange={encodeImageFileAsURL}
-                />
-              </label>
+            <div className="outerBorder-sm">
+              <div className="dashBorder-sm absoluteTarget flex items-center flex-col text-center justify-center">
+                <label htmlFor="file-upload" className="cursor-pointer">
+                  <TbPhotoCircle className="border-circle unrotate responsive-icon"/>
+                  <input
+                    id="file-upload"
+                    type="file"
+                    className="hidden"
+                    onChange={encodeImageFileAsURL}
+                  />
+                  <div className="iconLine "></div>
+                  <div className="iconDot"> </div>
+                  <div className="iconText"> ALLOW A.I. ACCESS GALLERY </div>
+                </label>
+              </div>
             </div>
         </form>
       <div className="flex pb-4 w-full items-center">
