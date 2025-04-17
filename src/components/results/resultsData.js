@@ -33,9 +33,9 @@ export default function ResultsData({setStatus, age, sex, race, setAge, setSex, 
   }
 
   return (
-    <div className="flex justify-start w-full h-full pl-8 pr-8 pb-4">
+    <div className="flex justify-start w-full h-full pl-2 pr-2 pb-4 md:pr-8 md:pl-8">
         <div className="w-2/12 border-t-2 border-grey font-semibold slight-grey-background">
-            <div className={` pl-2 pb-4 
+            <div className={` pl-2 pr-2 pb-4 
                 ${category === "race" ? "bg-black text-white" : "grey-hover"}
             `}
             onClick={() => setCategory("race")}

@@ -31,9 +31,9 @@ export default function Home() {
         </div>
       </div>
         <form onSubmit={formSubmit}>
-            <div className="dashBorder flex items-center pl-4 flex-col text-center justify-center">
-                <div className="grey textlabel text-sm unrotate pb-4 pr-16"> CLICK TO TYPE </div>
-                <input onChange={changeHandler} value={name} required id="name" className="textfield decoration-[1px] text-center underline underline-offset-8 text-5xl font-light unrotate" type="text" placeholder="Introduce Yourself" />
+            <div className="dashBorder flex items-center pl-6 flex-col text-center justify-center w-full h-full sm:pl-4">
+                <div className="grey textlabel text-center unrotate pb-4 pr-12 text-xs sm:pr-12"> CLICK TO TYPE </div>
+                <input onChange={changeHandler} value={name} required id="name" className="textfield decoration-[1px] text-center underline underline-offset-8 font-light unrotate text-xl sm:text-3xl md:text-5xl" type="text" placeholder="Introduce Yourself" />
             </div>
         </form>
       <div className="flex pb-4 w-full items-center">

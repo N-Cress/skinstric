@@ -40,7 +40,7 @@ export default function PictureHome({ status, setStatus }) {
      
 
       return (
-    <div className="flex flex-col items-center justify-between h-full w-full pl-8 pr-8">
+    <div className="flex flex-col items-center justify-between h-full w-full pl-8">
         <div className="flex justify-start w-full flex-col font-semibold">
           <div className="flex justify-between items-center w-full h-16">
               <div className=""> 
@@ -51,16 +51,16 @@ export default function PictureHome({ status, setStatus }) {
               TO START ANALYSIS 
           </div>
         </div>
-        <form className="flex w-full justify-center" >
+        <form className="flex w-full h-full items-center justify-around" >
             <div className="dashBorder-sm flex items-center flex-col text-center justify-center">
             <label htmlFor="file-upload" className="cursor-pointer">
-              <PiApertureFill onClick={startLoading} type="file" className="border-circle unrotate" size={140} />
+              <PiApertureFill onClick={startLoading} type="file" className="responsive-icon border-circle unrotate" />
         
             </label>
             </div>
-            <div className="dashBorder-sm flex items-center flex-col ml-96 text-center justify-center">
+            <div className="dashBorder-sm flex items-center flex-col text-center justify-center">
               <label htmlFor="file-upload" className="cursor-pointer">
-                <TbPhotoCircle className="border-circle unrotate" size={140}/>
+                <TbPhotoCircle className="border-circle unrotate responsive-icon"/>
                 <input
                   id="file-upload"
                   type="file"

@@ -269,7 +269,7 @@ export default function Home() {
             {renderBackButton(status)}
             { status === "demos" ? 
             <>
-          <div className="grey text-sm ml-40"> If A.I. estimate is wrong, select the correct one.</div>
+          <div className="grey text-sm pl-4 md:ml-40"> If A.I. estimate is wrong, select the correct one.</div>
           <div className="flex items-center mr-12">
             <div onClick={resetValues} className="cursor-pointer border-2 border-black pl-3 pr-3 pt-1 pb-1 "> RESET </div>
             <div onClick={submitValues} className="cursor-pointer ml-4 border-2 bg-black text-white border-black pl-3 pr-3 pt-1 pb-1"> CONFIRM </div>

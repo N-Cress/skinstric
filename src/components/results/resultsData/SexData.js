@@ -28,22 +28,24 @@ export default function SexData({sex, setSex, pMale, pFemale}) {
     return(
     <>
     <div className="flex mr-4 ml-4 w-7/12 border-t-2 border-black slight-grey-background">
-            <div className="pl-4 w-full pt-2 font-medium text-4xl">
+        <div className="flex flex-col w-full  text-center md:flex-row">
+            <div className="pl-2 w-full pt-2 font-medium text-4xl">
                 {normSex}
             </div>
-            <div className="flex justify-end pr-10 items-center circle-wrapper">
+            <div className="flex justify-center relative items-center circle-wrapper">
                 <div className="flex font-medium text-4xl perc-circle" style={{ "--percent": `${mainPerc(sex)}%` }}>
                 </div>
                 <div className="label text-4xl"> {mainPerc(sex)} <span className="text-sm"> % </span> </div>
             </div>
         </div>
-        <div className="w-3/12 border-t-2 border-black pl-4 pr-4 slight-grey-background">
-            <div className="flex justify-between pt-2 ">
+    </div>
+        <div className="w-4/12 border-t-2 border-black pl-2 pr-2 slight-grey-background">
+            <div className="flex justify-between pt-2 flex-col text-xs md:text-sm md:flex-row">
                 <div> SEX </div>
                 <div> A.I. CONFIDENCE </div>
             </div>
             <div 
-            className={`flex justify-between p-2 items-center cursor-pointer ${
+            className={`flex justify-between p-2 items-center cursor-pointer text-xs lg:text-base ${
                 sex === "MALE" ? "bg-black text-white" : "grey-hover"
             }`} 
             onClick={() => setSex("MALE")}
@@ -58,7 +60,7 @@ export default function SexData({sex, setSex, pMale, pFemale}) {
             </div>
             </div>
             <div 
-            className={`flex justify-between p-2 items-center cursor-pointer ${
+            className={`flex justify-between p-2 items-center cursor-pointer text-xs lg:text-base ${
                 sex === "FEMALE" ? "bg-black text-white" : "grey-hover"
             }`} 
             onClick={() => setSex("FEMALE")}
