@@ -159,7 +159,6 @@ input:focus {
   left: 38%;
   top: 87%;
 }
-
 .iconText {
   overflow: visible;
   position: absolute;
@@ -171,18 +170,56 @@ input:focus {
   width: 110px;
   text-align: end;
 }
-
 .iconDot {
-  padding: 3px;
+  padding: 2px;
   position: absolute;
   border: 1px solid black;
   border-radius: 50%;
-  left: 50%;
+  left: 50.5%;
   top: 99%;
   background-color: white;
   z-index: 100;
 }
 
+.iconLine-left {
+  border-bottom: 1px solid black;
+  rotate: -90deg;
+  position: absolute;
+  width: 80px;
+  left: 38%;
+  top: 16%;
+}
+.iconDot-left {
+  padding: 2px;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 50%;
+  left: 49.5%;
+  top: 3%;
+  background-color: white;
+  z-index: 100;
+}
+.iconText-left {
+  overflow: visible;
+  position: absolute;
+  top: 0%;
+  left: 40%;
+  rotate: -45deg;
+  transform: translate(45%, -100%);
+  font-size: 12px;
+  width: 110px;
+  text-align: start;
+}
+
+.outerBorder-sm {
+  border: 2px dashed #e0e0e0;
+  transform: rotate(45deg);
+  padding: 10px;
+}
+
+.outerBorder-sm-unrotate {
+  rotate: 0deg;
+}
 
 /* resultCategories styling for the diamond */
 

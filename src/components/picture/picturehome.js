@@ -52,14 +52,19 @@ export default function PictureHome({ status, setStatus }) {
           </div>
         </div>
         <form className="flex w-full h-full items-center justify-around" >
-            <div className="dashBorder-sm flex items-center flex-col text-center justify-center">
-            <label htmlFor="file-upload" className="cursor-pointer">
-              <PiApertureFill onClick={startLoading} type="file" className="responsive-icon border-circle unrotate" />
-        
-            </label>
+            <div className="outerBorder-sm">
+              <div className="iconLine-left"></div>
+              <div className="iconDot-left"> </div>
+              <div className="iconText-left"> ALLOW A.I. TO SCAN YOUR FACE</div>
+              <div className="dashBorder-sm outerBorder-sm-unrotate flex items-center flex-col text-center justify-center">
+              <label htmlFor="file-upload" className="cursor-pointer">
+                <PiApertureFill onClick={startLoading} type="file" className="responsive-icon border-circle unrotate" />
+          
+              </label>
+              </div>
             </div>
             <div className="outerBorder-sm">
-              <div className="dashBorder-sm absoluteTarget flex items-center flex-col text-center justify-center">
+              <div className="dashBorder-sm outerBorder-sm-unrotate absoluteTarget flex items-center flex-col text-center justify-center">
                 <label htmlFor="file-upload" className="cursor-pointer">
                   <TbPhotoCircle className="border-circle unrotate responsive-icon"/>
                   <input
