@@ -314,6 +314,22 @@ input:focus {
     width: 250px;
     height: 250px;
   }
+  .iconLine {
+    top: 90%;
+    left: 40%;
+    width: 55px;
+  }
+  .iconDot {
+    left: 50%;
+  }
+  .iconLine-left {
+    top: 14%;
+    left: 41%;
+    width: 55px;
+  }
+  .iconDot-left {
+    left: 50%;
+  }
 }
 
 @media (max-width: 825px) {
@@ -344,6 +360,16 @@ input:focus {
   .outerBorder {
     padding: 20px;
   }
+  .iconLine {
+    width: 30px;
+    top: 93%;
+    left: 44%;
+  }
+  .iconLine-left {
+    width: 30px;
+    top: 11%;
+    left: 44.5%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -354,6 +380,12 @@ input:focus {
   .dashBorder-sm {
     width: 150px;
     height: 150px;
+  }
+  .iconLine {
+    left: 42%;
+  }
+  .iconLine-left {
+    left: 43%;
   }
 }
 
@@ -375,6 +407,17 @@ input:focus {
   .dashBorder-sm {
     width: 120px;
     height: 120px;
+  }
+  .iconLine {
+    top: 88%;
+    left: 40%;
+  }
+  .iconLine-left {
+    top: 18%;
+    left: 41.5%;
+  }
+  .iconDot-left {
+    top: 5%;
   }
   .outerBorder {
     padding: 5px;

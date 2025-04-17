@@ -118,7 +118,7 @@ export default function CameraLoading() {
           </div>
           <div className="white fixed flex flex-col items-center bottom-8 left-[50%] translate-x-[-50%]">
             <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
-            <div className="flex text-xs mt-2">
+            <div className="flex text-xs max-w-80 mt-2">
               <div className="flex items-center justify-center">
                 <PiDiamond className="mr-2" />
                 <div>NEUTRAL EXPRESSION</div>

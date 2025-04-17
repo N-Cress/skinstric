@@ -277,6 +277,12 @@ export default function Home() {
             </> :
               <></>
             }
+           <div onClick={() => setStatus("demos")} className="flex items-center mr-4">
+            <div className="text-sm mr-4"> GET SUMMARY </div>
+            <div className="border cursor-pointer"> 
+              <MdPlayArrow className="rotate-[-45deg]" size={20}/>
+            </div>
+          </div> 
         </div>
     </main> 
   );
