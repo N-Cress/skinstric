@@ -42,7 +42,7 @@ export default function RaceData({race, setRace, pWhite, pBlack, pEAsian, pSEAsi
 
     return(
     <>
-    <div className="flex mr-4 ml-4 w-7/12 border-t-2 border-black slight-grey-background">
+    <div className="flex mr-4 ml-4 sm:w-7/12 border-t-2 border-black slight-grey-background">
         <div className="flex flex-col w-full  text-center md:flex-row">
             <div className="pl-2 w-full pt-2 font-medium text-4xl md:pl-4">
                 {normRace}
@@ -54,7 +54,7 @@ export default function RaceData({race, setRace, pWhite, pBlack, pEAsian, pSEAsi
             </div>
         </div>
     </div>
-        <div className="w-4/12 border-t-2 border-black pl-2 pr-2 slight-grey-background">
+        <div className="sm:w-4/12 border-t-2 border-black pl-2 pr-2 slight-grey-background">
             <div className="flex justify-between pt-2 flex-col text-xs md:text-sm md:flex-row">
                 <div> RACE </div>
                 <div> A.I. CONFIDENCE </div>
