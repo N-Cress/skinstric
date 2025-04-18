@@ -79,12 +79,12 @@ export default function Home() {
         case "cat":
           return < > 
             <div className="font-normal"> A.I HAS ESTIMATED THE FOLLOWING.</div>
-            <div className="font-normal" > FIX ESTIMATED INFORMATION IF NEEDED. </div>
+            <div className="font-normal mb-20" > FIX ESTIMATED INFORMATION IF NEEDED. </div>
           </>;
         case "demos":
           return < > 
-            <div className="font-bold text-5xl pb-2"> DEMOGRAPHICS </div>
-            <div className="font-normal text-xs mb-32"> PREDICTED RACE & AGE </div>
+            <div className="font-bold text-3xl pb-2 sm:text-5xl"> DEMOGRAPHICS </div>
+            <div className="font-normal text-xs mb-8 sm:mb-32"> PREDICTED RACE & AGE </div>
           </>
       }
     }
@@ -265,24 +265,24 @@ export default function Home() {
       </div>
       }
        {renderContent(status)}
-       <div className="pl-4 flex pb-6 w-full justify-between items-center">
+       <div className="button-fixes pl-4 flex pb-6 w-full justify-between items-center">
             {renderBackButton(status)}
             { status === "demos" ? 
             <>
-          <div className="grey text-sm pl-4 md:ml-40"> If A.I. estimate is wrong, select the correct one.</div>
-          <div className="flex items-center mr-12">
+          <div className="grey small-disappear text-sm pl-4 md:ml-40"> If A.I. estimate is wrong, select the correct one.</div>
+          <div className="flex items-center mr-2 md:mr-12">
             <div onClick={resetValues} className="cursor-pointer border-2 border-black pl-3 pr-3 pt-1 pb-1 "> RESET </div>
-            <div onClick={submitValues} className="cursor-pointer ml-4 border-2 bg-black text-white border-black pl-3 pr-3 pt-1 pb-1"> CONFIRM </div>
+            <div onClick={submitValues} className="cursor-pointer ml-2 border-2 bg-black text-white border-black pl-3 pr-3 pt-1 pb-1"> CONFIRM </div>
           </div> 
             </> :
               <></>
             }
-           <div onClick={() => setStatus("demos")} className="flex items-center mr-4">
+            {status === "cat" ? <div onClick={() => setStatus("demos")} className="flex items-center mr-4">
             <div className="text-sm mr-4"> GET SUMMARY </div>
             <div className="border cursor-pointer"> 
               <MdPlayArrow className="rotate-[-45deg]" size={20}/>
             </div>
-          </div> 
+          </div> : <></>}
         </div>
     </main> 
   );

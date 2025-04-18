@@ -465,6 +465,9 @@ input:focus {
   .iconText {
     font-size: 10px;
   }
+  .button-fixes {
+    margin-top: 175px;
+   }
 }
 
 @media (max-width: 575px) {
@@ -519,6 +522,9 @@ input:focus {
     font-size: 8px;
     max-width: 80px;
   }
+  .small-disappear {
+    display: none;
+  }
  }
 
  @media (max-width: 450px) {
@@ -535,5 +541,12 @@ input:focus {
     width: 14px;
     top: 12%;
     left: 46%;
+  }
+  .fourdiamond {
+    width: 225px;
+    height: 225px;
+  }
+  .part {
+    font-size: 9px;
   }
  }

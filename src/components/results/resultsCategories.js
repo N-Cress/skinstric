@@ -8,7 +8,7 @@ export default function ResultsCategories({setStatus}) {
 
   return (
     <div className="flex flex-col justify-center h-full">
-        <div className="outerBorder">
+        <div className="outerBorder flex ">
             <div className="fourdiamond text-center">
                 <div onClick={statusToDemos} className="part top "> 
                   <div className="unrotate">

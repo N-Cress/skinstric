@@ -23,8 +23,8 @@ export default function AgeData({age, setAge, pOnes, pTeens, pTwenties, pThirtie
     }
     return(
     <>
-    <div className="flex mr-4 ml-4 w-7/12 border-t-2 border-black slight-grey-background">
-        <div className="flex flex-col w-full  text-center md:flex-row">
+    <div className="flex mr-4 ml-4 border-t-2 border-black slight-grey-background sm:w-7/12">
+        <div className="flex flex-col w-full text-center md:flex-row">
             <div className="pl-2 w-full pt-2 font-medium text-4xl">
                 {age} y.o.
             </div>
@@ -35,7 +35,7 @@ export default function AgeData({age, setAge, pOnes, pTeens, pTwenties, pThirtie
             </div>
         </div>
     </div>
-        <div className="w-4/12 border-t-2 border-black pl-2 pr-2 slight-grey-background">
+        <div className="border-t-2  border-black pl-2 pr-2 slight-grey-background sm:w-4/12">
             <div className="flex justify-between pt-2 flex-col text-xs md:text-sm md:flex-row">
                 <div> RACE </div>
                 <div> A.I. CONFIDENCE </div>
@@ -155,7 +155,7 @@ export default function AgeData({age, setAge, pOnes, pTeens, pTwenties, pThirtie
                 <BsDiamond className={`pr-1 `}/>
                 <div>70+</div>
             </div>
-            <div className="flex">
+            <div className="flex ">
                 <div>{pSeventies.toString().substring(2,4)}</div>
                 <div>%</div>
             </div>
