@@ -265,7 +265,7 @@ export default function Home() {
       </div>
       }
        {renderContent(status)}
-       <div className="button-fixes pl-4 flex pb-6 w-full justify-between items-center">
+       <div className="button-fixes pl-4 flex pt-2 pb-6 w-full justify-between items-center">
             {renderBackButton(status)}
             { status === "demos" ? 
             <>
