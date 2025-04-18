@@ -459,6 +459,12 @@ input:focus {
     height: 15px;
     width: 15px;
   }
+  .iconText-left {
+    font-size: 10px;
+  }
+  .iconText {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -504,6 +510,14 @@ input:focus {
   .dashBorder-sm-moving {
     width: 250px;
     height: 250px;
+  }
+  .iconText-left {
+    font-size: 8px;
+    max-width: 80px;
+  }
+  .iconText {
+    font-size: 8px;
+    max-width: 80px;
   }
  }
 
