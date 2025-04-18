@@ -84,12 +84,12 @@ export default function CameraLoading() {
         <>
           <div className="mb-8 dashBorder-sm-moving flex items-center flex-col text-center justify-center">
             <div className="flex flex-col items-center unrotate-anim">
-              <PiApertureFill className="font-bold border-circle unrotate" size={140} />
-              <div className="pt-4">SETTING UP CAMERA...</div>
+              <PiApertureFill className="font-bold border-circle unrotate set-up-icon" size={140} />
+              <div className="pt-4 text-sm md:text-base">SETTING UP CAMERA...</div>
             </div>
           </div>
           <div className="mt-8 text-xs">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
-          <div className="flex text-xs mt-2">
+          <div className="flex text-center max-w-80 text-xs mt-2">
             <div className="flex items-center justify-center">
               <PiDiamond className="mr-2" />
               <div>NEUTRAL EXPRESSION</div>
@@ -106,7 +106,7 @@ export default function CameraLoading() {
         </>
       ) : (
         <div>
-          <div className="white flex fixed bottom-1/2 right-0  px-4 py-2">
+          <div className="white flex fixed right-0  px-4 py-2 picture-button">
             <button className="flex items-center px-4 py-2 rounded-lg" onClick={takePicture}>
               Take Picture
               <div className="ml-2 white-bg">
@@ -134,20 +134,20 @@ export default function CameraLoading() {
           </div>
           </div>
           {image && (
-            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black">
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black ">
               <img src={image} alt="Captured" className="w-full h-full object-cover" />
               <div className="absolute top-2 left-4 white"> 
                 SKINSTRIC <span className="grey"> &#91; ANALYSIS &#93; </span>
               </div>
-              <div className="absolute top-52 white"> Great Shot!</div>
-              <div className="absolute bottom-8 right-8 flex white items-center">
+              <div className="absolute top-52 translate-fix white"> Great Shot!</div>
+              <div className="absolute bottom-1/2 right-8 flex white items-center md:bottom-8">
                 <div> Proceed </div>
                   <div onClick={submitCapture} className="cursor-pointer border-white ml-4"> 
                     <MdPlayArrow className="rotate-[75deg]" size={20}/>
                   </div>
                 
               </div>
-              <div className="absolute bottom-8 left-8 flex white items-center">
+              <div className="absolute bottom-1/2 left-8 flex white items-center md:bottom-8">
                 <div onClick={reloadDoc} className="border-white mr-4"> 
                   <MdPlayArrow className="rotate-[135deg]" size={20}/>
                 </div>

@@ -19,6 +19,10 @@ body, html, #__next {
   height: 30px;
 }
 
+.translate-fix {
+  transform: translate(20%, -0%);
+}
+
 .grey {
   color: #a9a9a9;
 }
@@ -417,6 +421,7 @@ input:focus {
     top: 11%;
     left: 44.5%;
   }
+ 
 }
 
 @media (max-width: 750px) {
@@ -470,6 +475,10 @@ input:focus {
 }
 
  @media (max-width: 500px) {
+  .dashBorder {
+    width: 225px;
+    height: 225px;
+  }
   .responsive-icon {
     height: 60px;
     width: 60px;
@@ -491,5 +500,26 @@ input:focus {
   }
   .outerBorder {
     padding: 5px;
+  }
+  .dashBorder-sm-moving {
+    width: 250px;
+    height: 250px;
+  }
+ }
+
+ @media (max-width: 450px) {
+  .dashBorder-sm {
+    width: 80px;
+    height: 80px;
+  }
+  .iconLine {
+    width: 8px;
+    top: 94%;
+    left: 49%;
+  }
+  .iconLine-left {
+    width: 14px;
+    top: 12%;
+    left: 46%;
   }
  }
