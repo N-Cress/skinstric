@@ -486,6 +486,9 @@ input:focus {
   .button-fixes {
     margin-top: 175px;
    }
+   .slight-grey-background {
+    background: white;
+   }
 }
 
 @media (max-width: 575px) {
