@@ -14,10 +14,28 @@ body, html, #__next {
   font-family: rooSub;
 }
 
+
+.outerBorder-arrow {
+  transform: rotate(45deg);
+  padding: 0px;
+  rotate: 45deg;
+}
+
 .arrowIcon {
   width: 30px;
   height: 30px;
 }
+
+/* .outerBorder-arrow:hover {
+  border: 2px dashed #e0e0e0;
+  padding: 10px;
+}
+
+.arrowIcon:hover {
+  width: 20px;
+  height: 20px;
+} */
+
 
 .translate-fix {
   transform: translate(20%, -0%);
